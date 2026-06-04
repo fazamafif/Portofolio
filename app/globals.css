@@ -1,8 +1,22 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6f8fa;
+  --foreground: #1e293b;
+  --stud-highlight: rgba(255, 255, 255, 0.95);
+  --stud-shadow: rgba(0, 0, 0, 0.05);
+  --stud-body: #e2e6ea;
+  --grid-line: rgba(0, 0, 0, 0.03);
+}
+
+.dark {
+  --background: #111215;
+  --foreground: #f1f5f9;
+  --stud-highlight: rgba(255, 255, 255, 0.05);
+  --stud-shadow: rgba(0, 0, 0, 0.4);
+  --stud-body: #1c1d22;
+  --grid-line: rgba(0, 0, 0, 0.15);
 }
 
 @theme inline {
@@ -12,15 +26,277 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+
+body {
+  background-color: var(--background);
+  background-image:
+    /* Stud top highlights */
+    radial-gradient(circle at 16px 16px, var(--stud-highlight) 7px, transparent 8px),
+    /* Stud shadows */
+    radial-gradient(circle at 20px 20px, var(--stud-shadow) 9px, transparent 11px),
+    /* Stud bodies */
+    radial-gradient(circle at 18px 18px, var(--stud-body) 9px, transparent 10px),
+    /* Brick grid dividers */
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 36px 36px;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Fade In Down for page load */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.fade-in-down {
+  animation: fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Lego brick drop-down animation */
+@keyframes dropBrick {
+  0% {
+    transform: translateY(-200px) scale(0.9);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(10px) scale(1.05);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-5px) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.drop-brick {
+  animation: dropBrick 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+/* Marquee animation from left to right */
+@keyframes marquee-left-to-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee-left-to-right 15s linear infinite;
+}
+
+
+.cursor-light {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x) var(--y), rgba(255, 255, 255, 0.45), transparent 40%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.group:hover .cursor-light {
+  opacity: 1;
+}
+
+/* Tech illustration animation */
+.tech-illustration {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-fade-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.photo-frame {
+  opacity: 0;
+  animation: rotateIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: transform 0.3s ease;
+}
+
+.photo-frame:hover {
+  transform: scale(1.05);
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulsate {
+  animation: pulsate 2s ease-in-out infinite;
+}
+
+/* Lego float animations with 3d rotation offsets */
+@keyframes legoFloat1 {
+  0%, 100% { transform: translateY(0) rotate(15deg); }
+  50% { transform: translateY(-15px) rotate(18deg); }
+}
+@keyframes legoFloat2 {
+  0%, 100% { transform: translateY(0) rotate(-25deg); }
+  50% { transform: translateY(-20px) rotate(-22deg); }
+}
+@keyframes legoFloat3 {
+  0%, 100% { transform: translateY(0) rotate(45deg); }
+  50% { transform: translateY(-12px) rotate(48deg); }
+}
+
+.lego-float-1 {
+  animation: legoFloat1 6s ease-in-out infinite;
+}
+.lego-float-2 {
+  animation: legoFloat2 8s ease-in-out infinite;
+}
+.lego-float-3 {
+  animation: legoFloat3 7s ease-in-out infinite;
+}
+
+/* Liquid Glass Navbar Styling */
+.liquid-nav {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.liquid-notch-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.liquid-notch {
+  position: absolute;
+  top: -1px; /* Align precisely with the top edge */
+  width: 68px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 0 0 34px 34px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+}
+
+/* Left curve connector */
+.liquid-notch::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 6px -6px 0 0 rgba(255, 255, 255, 0.65);
+}
+
+/* Right curve connector */
+.liquid-notch::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-left-radius: 20px;
+  box-shadow: -6px -6px 0 0 rgba(255, 255, 255, 0.65);
+}
+
+.active-circle {
+  position: absolute;
+  top: -24px;
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  z-index: 20;
+  transition: transform 0.38s cubic-bezier(0.25, 1, 0.2, 1);
 }
