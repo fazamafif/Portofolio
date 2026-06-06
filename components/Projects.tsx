@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { title } from "process";
 
 export default function Projects() {
   const projects = [
@@ -17,13 +18,22 @@ export default function Projects() {
       image: "/images/scraper-preview.webp",
       repoLink: "https://github.com",
       demoLink: "#"
+    },
+    {
+      title: "Kantin Digital Sekolah",
+      description: "Aplikasi Kantin digital yang saya buat untuk memudahkan siswa memesan makanan tanpa antri. Fitur realtime order tracking dan pembayaran online membuatnya sangat praktis.",
+      tags: ["PHP", "Laravel", "MySQL", "Tailwind CSS"],
+      // Pastikan gambar ini ada di folder public/images
+      image: "/images/evoting-preview.webp",
+      repoLink: "https://github.com",
+      demoLink: "#"
     }
   ];
 
   return (
     <section id="projects" className="space-y-8">
       <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-8 flex items-center gap-2">
-        Proyek Pilihan ✨
+        Proyek Pilihan 
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((proj, idx) => (

@@ -21,8 +21,18 @@ export default function Work() {
       image: "/images/scraper-preview.webp",
       repoLink: "https://github.com",
       demoLink: "#"
-    }
+    },
+    // {
+    //   title: "Kantin Digital Sekolah",
+    //   description: "Aplikasi Kantin digital yang saya buat untuk memudahkan siswa memesan makanan tanpa antri. Fitur realtime order tracking dan pembayaran online membuatnya sangat praktis.",
+    //   tags: ["PHP", "Laravel", "MySQL", "Tailwind CSS"],
+    //   // Pastikan gambar ini ada di folder public/images
+    //   image: "/images/evoting-preview.webp",
+    //   repoLink: "https://github.com",
+    //   demoLink: "#"
+    // }
   ];
+
 
   const tech = [
     { name: 'Frontend', items: ['React', 'Next.js', 'Tailwind'] },
@@ -55,7 +65,7 @@ export default function Work() {
     <section id="work" className="space-y-8 scroll-mt-20">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
         <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
-          My Work 🛠️
+          My Work 
         </h2>
 
         {/* Sub-Navbar (Lego styled) */}

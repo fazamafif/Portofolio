@@ -3,10 +3,10 @@ import React from "react";
 
 export default function About() {
   const stats = [
-    { label: "Peran utama", value: "Backend Developer 💻", color: "text-blue-600 dark:text-blue-400" },
+    { label: "Peran utama", value: "Junior Web Developer ", color: "text-blue-600 dark:text-blue-400" },
     { label: "Jurusan", value: "Rekayasa Perangkat Lunak (RPL)", color: "text-green-600 dark:text-green-400" },
-    { label: "Sekolah", value: "SMK Pelita Nusantara 🏫", color: "text-red-600 dark:text-red-400" },
-    { label: "Hobi Coding", value: "Laravel, Node.js, Python", color: "text-amber-600 dark:text-amber-400" }
+    { label: "Sekolah", value: "SMK Pelita Nusantara ", color: "text-red-600 dark:text-red-400" },
+    // { label: "Hobi Belum Tau", value: "Laravel", color: "text-amber-600 dark:text-amber-400" }
   ];
 
   return (
@@ -22,11 +22,11 @@ export default function About() {
             Halo! Perkenalkan, nama saya <strong className="text-indigo-600 dark:text-indigo-400">Faza Maf&apos;Alul Afif</strong>. Saya adalah seorang siswa jurusan Rekayasa Perangkat Lunak (RPL) di SMK Pelita Nusantara.
           </p>
           <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
-            Ketertarikan saya pada dunia pemrograman bermula dari rasa penasaran tentang bagaimana sistem di belakang layar bekerja. Sejak itu, saya mendalami pengembangan <strong className="text-slate-800 dark:text-slate-200">Backend</strong>, pengelolaan database, dan pembuatan automation scripts.
+            Ketertarikan saya pada dunia pemrograman bermula dari rasa penasaran tentang bagaimana sistem di tampilan layar . 
           </p>
-          <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
+          {/* <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
             Sama seperti menyusun <strong className="text-amber-500">Lego</strong>, menulis baris kode bagi saya adalah seni merangkai komponen logika satu per satu hingga menjadi suatu sistem utuh yang kokoh, terstruktur, dan siap memecahkan masalah di dunia nyata.
-          </p>
+          </p> */}
         </div>
 
         {/* Right Column - Stats Lego Brick Card */}
@@ -40,7 +40,7 @@ export default function About() {
           </div>
 
           <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4 pb-2 border-b border-slate-100 dark:border-slate-800">
-            Lego Profile Card 📇
+            Profile Card
           </h3>
 
           <div className="space-y-4">

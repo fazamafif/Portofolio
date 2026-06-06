@@ -27,7 +27,7 @@ export default function Hero() {
         </p>
 
         <p className="text-lg max-w-xl leading-relaxed mb-8 text-slate-600 dark:text-slate-400 custom-fade-up delay-200">
-          Halo! Saya Faza, siswa SMK Pelita Nusantara yang suka ngoding backend dan bikin aplikasi web. Senang memecahkan masalah logika lewat baris kode, mengelola database, dan menyusun sistem yang rapi.
+          Halo! Saya Faza, siswa SMK Pelita Nusantara yang baru belajar ngoding frontend dan bikin berbasis web.
         </p>
 
         <div className="flex flex-wrap gap-6 custom-fade-up delay-300 pt-3">
@@ -43,7 +43,7 @@ export default function Hero() {
           </a>
 
           {/* Lego Blue Button */}
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="relative px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-[0_4px_0_#1e40af] transition-all duration-100 hover:translate-y-[2px] hover:shadow-[0_2px_0_#1e40af] active:translate-y-[4px] active:shadow-none select-none">
+          <a href="https://github.com/fazamafif/fazamafif" target="_blank" rel="noopener noreferrer" className="relative px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-[0_4px_0_#1e40af] transition-all duration-100 hover:translate-y-[2px] hover:shadow-[0_2px_0_#1e40af] active:translate-y-[4px] active:shadow-none select-none">
             {/* Studs */}
             <div className="flex gap-2 justify-center absolute -top-[6px] left-0 right-0">
               <div className="w-3.5 h-1.5 bg-blue-500 rounded-t border-t border-blue-300 shadow-sm" />

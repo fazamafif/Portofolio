@@ -7,52 +7,88 @@ export default function Contact() {
 
   const contacts = [
     {
-      name: "Email",
-      value: "fazamafalul@gmail.com",
-      href: "mailto:fazamafalul@gmail.com",
-      icon: "📧",
-      cardClass: "bg-red-600 border-red-700 shadow-[0_6px_0_#7f1d1d] text-white",
+      name: "Instagram",
+      // value: "faza.m.a",
+      href: "https://www.instagram.com/faza.m.a?igsh=MW9jZDRmb2dhb2I4",
+      cardClass: "bg-red-600 border-red-700 shadow-[0_6px_0_#7f1d1d] text-white  flex flex-col justify-center items-center",
       studClass: "bg-red-600 border-red-400",
       labelClass: "text-red-100",
       valueClass: "text-white"
     },
     {
       name: "LinkedIn",
-      value: "linkedin.com/in/faza-mafalul",
-      href: "https://linkedin.com",
-      icon: "💼",
-      cardClass: "bg-blue-600 border-blue-700 shadow-[0_6px_0_#1e3a8a] text-white",
+      // value: "fazamaf'alulafif",
+      href: "https://www.linkedin.com/in/faza-maf-alul-afif-923738405/",
+      cardClass: "bg-blue-600 border-blue-700 shadow-[0_6px_0_#1e3a8a] text-white flex flex-col justify-center items-center",
       studClass: "bg-blue-600 border-blue-400",
       labelClass: "text-blue-100",
       valueClass: "text-white"
     },
     {
       name: "GitHub",
-      value: "github.com/fazamafalul",
-      href: "https://github.com/fazamafalul",
-      icon: "🐙",
-      cardClass: "bg-amber-400 border-amber-500 shadow-[0_6px_0_#b45309] text-amber-950",
+      // value: "fazamafif",
+      href: "https://github.com/fazamafif/fazamafif",
+      cardClass: "bg-amber-400 border-amber-500 shadow-[0_6px_0_#b45309] text-amber-950  flex flex-col justify-center items-center",
       studClass: "bg-amber-400 border-amber-300",
       labelClass: "text-amber-900",
       valueClass: "text-amber-950 font-bold"
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // 1. Tempat logika handleSubmit diletakkan (DI ATAS return, DI DALAM komponen)
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setFormData({ name: "", email: "", message: "" });
-      }, 3000);
+
+    // Validasi dasar memastikan tidak ada field yang kosong
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Semua kolom formulir wajib diisi!");
+      return;
+    }
+
+    // Objek penampung data untuk dikirim ke API Web3Forms
+    const dataToSend = {
+      // Mengambil kunci aman dari file .env.local
+      access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY as string, 
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(dataToSend),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // Memicu tampilan kotak sukses hijau bawaan UI Anda
+        setSubmitted(true);
+        
+        // Reset form otomatis setelah 5 detik
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({ name: "", email: "", message: "" });
+        }, 5000);
+      } else {
+        alert("Gagal mengirim pesan: " + result.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Terjadi kesalahan jaringan.");
     }
   };
 
+  // 2. Awal dari blok tampilan UI komponen Anda
   return (
     <section id="contact" className="space-y-8 scroll-mt-20">
       <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-8 flex items-center gap-2">
-        Mari Terhubung! 📬
+        Mari Terhubung! 
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
@@ -86,7 +122,7 @@ export default function Contact() {
         {/* Right Column - Liquid Glass Contact Form (occupies 7 cols) */}
         <div className="md:col-span-7 p-6 md:p-8 bg-white/40 dark:bg-slate-900/40 backdrop-blur-lg border border-white/50 dark:border-slate-800/50 shadow-lg rounded-3xl">
           <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-6">
-            Kirim Pesan ✉️
+            Kirim Pesan 
           </h3>
 
           {submitted ? (
@@ -101,6 +137,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
+                  name="name" // <-- Sudah ditambahkan
                   required
                   placeholder="Masukkan nama Anda"
                   value={formData.name}
@@ -115,8 +152,9 @@ export default function Contact() {
                 </label>
                 <input
                   type="email"
+                  name="email" // <-- Sudah ditambahkan
                   required
-                  placeholder="@email.com"
+                  placeholder="nama@email.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-2.5 bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-xl focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-600 transition-colors"
@@ -129,6 +167,7 @@ export default function Contact() {
                 </label>
                 <textarea
                   rows={4}
+                  name="message" // <-- Sudah ditambahkan
                   required
                   placeholder="Tuliskan pesan Anda di sini..."
                   value={formData.message}
@@ -157,5 +196,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  );
+  ); // 3. Akhir dari return komponen
 }

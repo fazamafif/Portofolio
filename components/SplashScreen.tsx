@@ -88,11 +88,11 @@ export default function SplashScreen() {
       }}
     >
       {/* Title */}
-      <div className="absolute top-10 text-center">
+      {/* <div className="absolute top-10 text-center">
         <span className="text-xs uppercase tracking-[0.3em] text-slate-500 font-bold">
           Assembling Portfolio
         </span>
-      </div>
+      </div> */}
 
       {/* Skip Button */}
       <button 
