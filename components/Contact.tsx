@@ -8,16 +8,14 @@ export default function Contact() {
   const contacts = [
     {
       name: "Instagram",
-      // value: "faza.m.a",
       href: "https://www.instagram.com/faza.m.a?igsh=MW9jZDRmb2dhb2I4",
       cardClass: "bg-red-600 border-red-700 shadow-[0_6px_0_#7f1d1d] text-white  flex flex-col justify-center items-center",
       studClass: "bg-red-600 border-red-400",
       labelClass: "text-red-100",
-      valueClass: "text-white"
+      valueClass: "text-white",
     },
     {
       name: "LinkedIn",
-      // value: "fazamaf'alulafif",
       href: "https://www.linkedin.com/in/faza-maf-alul-afif-923738405/",
       cardClass: "bg-blue-600 border-blue-700 shadow-[0_6px_0_#1e3a8a] text-white flex flex-col justify-center items-center",
       studClass: "bg-blue-600 border-blue-400",
@@ -26,7 +24,6 @@ export default function Contact() {
     },
     {
       name: "GitHub",
-      // value: "fazamafif",
       href: "https://github.com/fazamafif/fazamafif",
       cardClass: "bg-amber-400 border-amber-500 shadow-[0_6px_0_#b45309] text-amber-950  flex flex-col justify-center items-center",
       studClass: "bg-amber-400 border-amber-300",
@@ -110,10 +107,8 @@ export default function Contact() {
                 <div className={`w-4 h-2 rounded-t border-t shadow-sm ${item.studClass}`} />
               </div>
 
-              <span className="text-3xl group-hover:scale-110 transition-transform duration-300">{item.icon}</span>
               <div>
                 <h3 className={`text-xs font-bold uppercase tracking-wider ${item.labelClass}`}>{item.name}</h3>
-                <p className={`text-sm mt-1 break-all ${item.valueClass}`}>{item.value}</p>
               </div>
             </a>
           ))}
