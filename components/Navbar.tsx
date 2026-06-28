@@ -130,7 +130,7 @@ export default function Navbar() {
   return (
     <header className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] max-w-[400px] z-50 h-[64px] bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md rounded-2xl flex items-center px-1 select-none">
       {/* Grey Lego Studs on top of the navbar baseplate */}
-      <div className="flex gap-2 justify-center absolute -top-[6px] left-0 right-0 px-4">
+      <div className="flex gap-2 justify-center absolute top-[1.5] left-0 right-0 px-4">
         {Array.from({ length: 14 }).map((_, i) => (
           <div key={i} className="w-3.5 h-1.5 bg-slate-100 dark:bg-slate-900 rounded-t border-t border-slate-200 dark:border-slate-800 shadow-sm" />
         ))}
@@ -139,12 +139,12 @@ export default function Navbar() {
       {/* Sliding 3D Lego Brick Indicator (Slides across the content tabs) */}
       {activeIndex !== -1 && (
         <div 
-          className="absolute top-[6px] bottom-[10px] left-[6px] w-[calc(20%-3px)] rounded-xl transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-0"
+          className="absolute top-[1.5] bottom-[2.5] left-[1.5] w-[calc(20%-3px)] rounded-xl transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-0"
           style={{ transform: `translateX(${activeIndex * 100}%)` }}
         >
           <div className={`w-full h-full rounded-xl border ${colors[activeIndex].bg}`}>
             {/* Lego Studs on top of sliding block */}
-            <div className="flex gap-1.5 justify-center absolute -top-[5px] left-0 right-0">
+            <div className="flex gap-1.5 justify-center absolute top-[1.25] left-0 right-0">
               <div className={`w-2.5 h-1.5 rounded-t border-t shadow-sm ${colors[activeIndex].stud}`} />
               <div className={`w-2.5 h-1.5 rounded-t border-t shadow-sm ${colors[activeIndex].stud}`} />
             </div>
@@ -180,7 +180,7 @@ export default function Navbar() {
       </div>
 
       {/* Vertical Divider line */}
-      <div className="w-[1px] h-8 bg-slate-200 dark:bg-slate-800" />
+      <div className="w-[px] h-8 bg-slate-200 dark:bg-slate-800" />
 
       {/* Theme Toggle Button (20% width) */}
       <button 

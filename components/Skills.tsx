@@ -4,7 +4,7 @@ import React from 'react';
 export default function Skills() {
   const tech = [
     { name: 'Frontend', items: ['React', 'Next.js', 'Tailwind'] },
-    { name: 'Backend', items: ['Node.js', 'Express', 'MongoDB'] },
+    { name: 'Backend', items: ['Node.js', 'Express', 'MySQL'] },
     { name: 'Tools', items: ['GitHub', 'Laragon', 'Docker'] },
   ];
 
@@ -38,10 +38,10 @@ export default function Skills() {
         {tech.map((cat, i) => (
           <div
             key={i}
-            className={`relative rounded-2xl p-6 border transition-all duration-200 hover:scale-[1.03] hover:translate-y-[2px] hover:shadow-md ${colors[i].cardClass}`}
+            className={`relative rounded-2xl p-6 border transition-all duration-200 hover:scale-[1.03] hover:translate-y-[0.5] hover:shadow-md ${colors[i].cardClass}`}
           >
             {/* Lego Studs on top of card */}
-            <div className="flex gap-2 justify-center absolute -top-[8px] left-0 right-0 z-20">
+            <div className="flex gap-2 justify-center absolute -top-2 left-0 right-0 z-20">
               <div className={`w-4 h-2 rounded-t border-t shadow-sm ${colors[i].studClass}`} />
               <div className={`w-4 h-2 rounded-t border-t shadow-sm ${colors[i].studClass}`} />
               <div className={`w-4 h-2 rounded-t border-t shadow-sm ${colors[i].studClass}`} />

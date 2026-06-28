@@ -75,7 +75,7 @@ export default function SplashScreen() {
 
   return (
     <div 
-      className={`fixed inset-0 z-[9999] flex flex-col justify-center items-center bg-[#111215] select-none transition-all duration-700 ${
+      className={`fixed inset-0 z-9999 flex flex-col justify-center items-center bg-[#111215] select-none transition-all duration-700 ${
         fadeOut ? "opacity-0 scale-105 pointer-events-none" : "opacity-100 scale-100"
       }`}
       style={{
@@ -123,7 +123,7 @@ export default function SplashScreen() {
                   }}
                 >
                   {/* Lego Studs on top of each brick character */}
-                  <div className="absolute -top-[5px] left-0 right-0 flex justify-center gap-1">
+                  <div className="absolute top-[1.25] left-0 right-0 flex justify-center gap-1">
                     <div className="w-2.5 h-1.5 bg-inherit border-t border-white/40 rounded-t shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]" />
                     <div className="w-2.5 h-1.5 bg-inherit border-t border-white/40 rounded-t shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]" />
                   </div>

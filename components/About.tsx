@@ -12,7 +12,7 @@ export default function About() {
   return (
     <section id="about" className="space-y-8 scroll-mt-20">
       <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-8 flex items-center gap-2">
-        Tentang Saya 🧱
+        Tentang Saya
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
@@ -22,7 +22,7 @@ export default function About() {
             Halo! Perkenalkan, nama saya <strong className="text-indigo-600 dark:text-indigo-400">Faza Maf&apos;Alul Afif</strong>. Saya adalah seorang siswa jurusan Rekayasa Perangkat Lunak (RPL) di SMK Pelita Nusantara.
           </p>
           <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
-            Ketertarikan saya pada dunia pemrograman bermula dari rasa penasaran tentang bagaimana sistem di tampilan layar . 
+            Ketertarikan saya pada dunia pemrograman bermula dari rasa penasaran tentang bagaimana sistem di tampilan layar .
           </p>
           {/* <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
             Sama seperti menyusun <strong className="text-amber-500">Lego</strong>, menulis baris kode bagi saya adalah seni merangkai komponen logika satu per satu hingga menjadi suatu sistem utuh yang kokoh, terstruktur, dan siap memecahkan masalah di dunia nyata.
@@ -32,7 +32,7 @@ export default function About() {
         {/* Right Column - Stats Lego Brick Card */}
         <div className="md:col-span-5 relative group bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm hover:scale-[1.02] transition-all duration-300">
           {/* Lego Studs on top */}
-          <div className="flex gap-2 justify-center absolute -top-[8px] left-0 right-0 z-20">
+          <div className="flex gap-2 justify-center absolute -top-2 left-0 right-0 z-20">
             <div className="w-3.5 h-2 bg-white dark:bg-slate-900 rounded-t border-t border-slate-200 dark:border-slate-800 shadow-sm" />
             <div className="w-3.5 h-2 bg-white dark:bg-slate-900 rounded-t border-t border-slate-200 dark:border-slate-800 shadow-sm" />
             <div className="w-3.5 h-2 bg-white dark:bg-slate-900 rounded-t border-t border-slate-200 dark:border-slate-800 shadow-sm" />

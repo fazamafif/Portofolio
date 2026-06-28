@@ -36,7 +36,7 @@ export default function Work() {
 
   const tech = [
     { name: 'Frontend', items: ['React', 'Next.js', 'Tailwind'] },
-    { name: 'Backend', items: ['Node.js', 'Express', 'MongoDB'] },
+    { name: 'Backend', items: ['Node.js', 'Express', 'MySQL'] },
     { name: 'Tools', items: ['GitHub', 'Laragon', 'Docker'] },
   ];
 
@@ -69,17 +69,17 @@ export default function Work() {
         </h2>
 
         {/* Sub-Navbar (Lego styled) */}
-        <div className="relative flex p-1 bg-slate-200/80 dark:bg-slate-900 border border-slate-300/40 dark:border-slate-800 rounded-xl w-fit h-[42px] select-none items-center">
+        <div className="relative flex p-1 bg-slate-200/80 dark:bg-slate-900 border border-slate-300/40 dark:border-slate-800 rounded-xl w-fit h-10 select-none items-center">
           {/* Sliding active Lego brick indicator */}
           <div 
-            className={`absolute top-[4px] bottom-[4px] w-[calc(50%-4px)] rounded-lg transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-0 ${
+            className={`absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-lg transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-0 ${
               subTab === "projects" 
-                ? "left-[4px] bg-indigo-600 border-indigo-700 shadow-[0_2px_0_#4338ca]" 
-                : "left-[50%] bg-green-600 border-green-700 shadow-[0_2px_0_#15803d]"
+                ? "left-1 bg-indigo-600 border-indigo-700 shadow-[0_2px_0_#4338ca]" 
+                : "left-[calc(50%+2px)] bg-green-600 border-green-700 shadow-[0_2px_0_#15803d]"
             }`}
           >
             {/* Tiny stud on active sub-tab indicator */}
-            <div className="w-2.5 h-1 bg-white/20 rounded-t absolute -top-[3px] left-1/2 -translate-x-1/2" />
+            <div className="w-2.5 h-1 bg-white/20 rounded-t absolute -top-1 left-1/2 -translate-x-1/2" />
           </div>
 
           <button 
@@ -102,14 +102,14 @@ export default function Work() {
       </div>
 
       {/* Conditionally Render Sub-Sections */}
-      <div className="min-h-[300px]">
+      <div className="min-h-[-75]">
         {subTab === "projects" ? (
           /* Projects Grid */
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-3 animate-fade-in-down">
             {projects.map((proj, idx) => (
               <div key={idx} className="relative group bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 rounded-xl flex flex-col transition-all duration-300 hover:border-indigo-300 dark:hover:border-indigo-500 hover:scale-[1.02] hover:shadow-[0_10px_25px_rgba(99,102,241,0.08)] mt-3">
                 {/* Lego Studs on top */}
-                <div className="flex gap-2 justify-center absolute -top-[7px] left-0 right-0 z-20">
+                <div className="flex gap-2 justify-center absolute -top-2 left-0 right-0 z-20">
                   <div className="w-3.5 h-2 bg-white dark:bg-slate-900 rounded-t border-t border-slate-200 dark:border-slate-800 shadow-sm" />
                   <div className="w-3.5 h-2 bg-white dark:bg-slate-900 rounded-t border-t border-slate-200 dark:border-slate-800 shadow-sm" />
                   <div className="w-3.5 h-2 bg-white dark:bg-slate-900 rounded-t border-t border-slate-200 dark:border-slate-800 shadow-sm" />
@@ -120,9 +120,9 @@ export default function Work() {
                   <Image src={proj.image} alt={proj.title} fill className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
                   <div className="absolute inset-0 bg-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-6 flex flex-col grow">
                   <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">{proj.title}</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 flex-grow">{proj.description}</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 grow">{proj.description}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {proj.tags.map((tag, i) => (
                       <span key={i} className="text-xs font-semibold px-2.5 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 rounded-md">
@@ -143,10 +143,10 @@ export default function Work() {
             {tech.map((cat, i) => (
               <div
                 key={i}
-                className={`relative rounded-2xl p-6 border transition-all duration-200 hover:scale-[1.03] hover:translate-y-[2px] hover:shadow-md ${skillColors[i].cardClass}`}
+                className={`relative rounded-2xl p-6 border transition-all duration-200 hover:scale-[1.03] hover:translate-y-[0.75] hover:shadow-md ${skillColors[i].cardClass}`}
               >
                 {/* Lego Studs on top */}
-                <div className="flex gap-2 justify-center absolute -top-[8px] left-0 right-0 z-20">
+                <div className="flex gap-2 justify-center absolute -top-2 left-0 right-0 z-20">
                   <div className={`w-4 h-2 rounded-t border-t shadow-sm ${skillColors[i].studClass}`} />
                   <div className={`w-4 h-2 rounded-t border-t shadow-sm ${skillColors[i].studClass}`} />
                   <div className={`w-4 h-2 rounded-t border-t shadow-sm ${skillColors[i].studClass}`} />

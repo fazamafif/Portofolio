@@ -31,7 +31,7 @@ const LegoBrick3D = ({
       >
         {/* Top Face */}
         <div 
-          className="absolute rounded-[2px]" 
+          className="absolute rounded-[xs]" 
           style={{
             backgroundColor: c.top,
             width: is2x4 ? '72px' : '36px',
@@ -41,7 +41,7 @@ const LegoBrick3D = ({
           }}
         >
           {/* Studs */}
-          <div className={`grid ${is2x4 ? 'grid-cols-4' : 'grid-cols-2'} grid-rows-2 gap-[4px] p-[4px] h-full`}>
+          <div className={`grid ${is2x4 ? 'grid-cols-4' : 'grid-cols-2'} grid-rows-2 gap-[-1] p-[-1] h-full`}>
             {Array.from({ length: is2x4 ? 8 : 4 }).map((_, i) => (
               <div 
                 key={i} 
@@ -58,7 +58,7 @@ const LegoBrick3D = ({
 
         {/* Front Face */}
         <div 
-          className="absolute rounded-[2px]" 
+          className="absolute rounded-[xs]" 
           style={{
             backgroundColor: c.front,
             width: is2x4 ? '72px' : '36px',
@@ -70,7 +70,7 @@ const LegoBrick3D = ({
 
         {/* Side Face Left */}
         <div 
-          className="absolute rounded-[2px]" 
+          className="absolute rounded-[xs]" 
           style={{
             backgroundColor: c.side,
             width: '36px',
@@ -82,7 +82,7 @@ const LegoBrick3D = ({
 
         {/* Side Face Right */}
         <div 
-          className="absolute rounded-[2px]" 
+          className="absolute rounded-[xs]" 
           style={{
             backgroundColor: c.side,
             width: '36px',
@@ -98,7 +98,7 @@ const LegoBrick3D = ({
 
 export default function LegoBricks() {
   return (
-    <div className="fixed inset-0 pointer-events-none z-[0] overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Red Brick Top Left */}
       <LegoBrick3D color="red" size="2x4" className="top-[12%] left-[4%]" floatClass="lego-float-1" />
       

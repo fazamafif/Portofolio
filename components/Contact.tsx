@@ -97,10 +97,10 @@ export default function Contact() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`relative group flex items-center gap-4 p-5 border rounded-2xl transition-all duration-200 hover:scale-[1.03] hover:translate-y-[2px] ${item.cardClass}`}
+              className={`relative group flex items-center gap-4 p-5 border rounded-2xl transition-all duration-200 hover:scale-[1.03] hover:translate-y-[0.] ${item.cardClass}`}
             >
               {/* Lego Studs on top */}
-              <div className="flex gap-2 justify-center absolute -top-[8px] left-0 right-0 z-20">
+              <div className="flex gap-2 justify-center absolute -top-2 left-0 right-0 z-20">
                 <div className={`w-4 h-2 rounded-t border-t shadow-sm ${item.studClass}`} />
                 <div className={`w-4 h-2 rounded-t border-t shadow-sm ${item.studClass}`} />
                 <div className={`w-4 h-2 rounded-t border-t shadow-sm ${item.studClass}`} />
@@ -134,7 +134,7 @@ export default function Contact() {
                   type="text"
                   name="name" // <-- Sudah ditambahkan
                   required
-                  placeholder="Masukkan nama Anda"
+                  placeholder="Masukkan Nama Anda"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-2.5 bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-xl focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-600 transition-colors"
@@ -164,7 +164,7 @@ export default function Contact() {
                   rows={4}
                   name="message" // <-- Sudah ditambahkan
                   required
-                  placeholder="Tuliskan pesan Anda di sini..."
+                  placeholder="Tuliskan Pesan Anda DiSini..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-2.5 bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-xl focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-600 transition-colors resize-none"
@@ -175,10 +175,10 @@ export default function Contact() {
                 {/* Lego Green Button */}
                 <button
                   type="submit"
-                  className="relative w-full py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow-[0_4px_0_#15803d] transition-all duration-100 hover:translate-y-[2px] hover:shadow-[0_2px_0_#15803d] active:translate-y-[4px] active:shadow-none select-none cursor-pointer"
+                  className="relative w-full py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow-[0_4px_0_#15803d] transition-all duration-100 hover:translate-y-[0.5] hover:shadow-[0_2px_0_#15803d] active:translate-y-[1] active:shadow-none select-none cursor-pointer"
                 >
                   {/* Lego Studs */}
-                  <div className="flex gap-2 justify-center absolute -top-[6px] left-0 right-0">
+                  <div className="flex gap-2 justify-center absolute -top-1.5 left-0 right-0">
                     <div className="w-3.5 h-1.5 bg-green-500 rounded-t border-t border-green-300 shadow-sm" />
                     <div className="w-3.5 h-1.5 bg-green-500 rounded-t border-t border-green-300 shadow-sm" />
                     <div className="w-3.5 h-1.5 bg-green-500 rounded-t border-t border-green-300 shadow-sm" />

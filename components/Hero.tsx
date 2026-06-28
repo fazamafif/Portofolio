@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 export default function Hero() {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -32,9 +33,9 @@ export default function Hero() {
 
         <div className="flex flex-wrap gap-6 custom-fade-up delay-300 pt-3">
           {/* Lego Red Button */}
-          <a href="#projects" className="relative px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg shadow-[0_4px_0_#991b1b] transition-all duration-100 hover:translate-y-[2px] hover:shadow-[0_2px_0_#991b1b] active:translate-y-[4px] active:shadow-none select-none">
+          <a href="#projects" className="relative px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg shadow-[0_4px_0_#991b1b] transition-all duration-100 hover:translate-y-[0.5] hover:shadow-[0_2px_0_#991b1b] active:translate-y-[1] active:shadow-none select-none">
             {/* Studs */}
-            <div className="flex gap-2 justify-center absolute -top-[6px] left-0 right-0">
+            <div className="flex gap-2 justify-center absolute -top-1.5 left-0 right-0">
               <div className="w-3.5 h-1.5 bg-red-500 rounded-t border-t border-red-300 shadow-sm" />
               <div className="w-3.5 h-1.5 bg-red-500 rounded-t border-t border-red-300 shadow-sm" />
               <div className="w-3.5 h-1.5 bg-red-500 rounded-t border-t border-red-300 shadow-sm" />
@@ -43,9 +44,9 @@ export default function Hero() {
           </a>
 
           {/* Lego Blue Button */}
-          <a href="https://github.com/fazamafif/fazamafif" target="_blank" rel="noopener noreferrer" className="relative px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-[0_4px_0_#1e40af] transition-all duration-100 hover:translate-y-[2px] hover:shadow-[0_2px_0_#1e40af] active:translate-y-[4px] active:shadow-none select-none">
+          <a href="https://github.com/fazamafif/fazamafif" target="_blank" rel="noopener noreferrer" className="relative px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-[0_4px_0_#1e40af] transition-all duration-100 hover:translate-y-[0.5] hover:shadow-[0_2px_0_#1e40af] active:translate-y-[1] active:shadow-none select-none">
             {/* Studs */}
-            <div className="flex gap-2 justify-center absolute -top-[6px] left-0 right-0">
+            <div className="flex gap-2 justify-center absolute -top-1.5 left-0 right-0">
               <div className="w-3.5 h-1.5 bg-blue-500 rounded-t border-t border-blue-300 shadow-sm" />
               <div className="w-3.5 h-1.5 bg-blue-500 rounded-t border-t border-blue-300 shadow-sm" />
               <div className="w-3.5 h-1.5 bg-blue-500 rounded-t border-t border-blue-300 shadow-sm" />
@@ -57,23 +58,24 @@ export default function Hero() {
 
       {/* Right Column (Photo Frame) */}
       <div className="md:col-span-5 flex justify-center md:justify-end order-1 md:order-2">
-        <div 
-          className="relative group cursor-pointer overflow-visible rounded-2xl border-4 border-amber-400 bg-amber-400 shadow-xl transition-all duration-500"
+        <div
+          className="relative group cursor-pointer overflow-visible rounded-2xl border-4 border-amber-400 bg-amber-400 shadow-xl transition-all duration-500 photo-frame"
           onMouseMove={handleMouseMove}
           style={{ width: "240px", height: "360px" }}
         >
           {/* Yellow Lego Studs on top of photo */}
-          <div className="flex gap-3 justify-center absolute -top-[10px] left-0 right-0 z-20">
+          <div className="flex gap-3 justify-center absolute -top-2 left-0 right-0 z-20">
             <div className="w-4 h-2.5 bg-amber-400 rounded-t border-t border-amber-200 shadow-sm" />
             <div className="w-4 h-2.5 bg-amber-400 rounded-t border-t border-amber-200 shadow-sm" />
             <div className="w-4 h-2.5 bg-amber-400 rounded-t border-t border-amber-200 shadow-sm" />
             <div className="w-4 h-2.5 bg-amber-400 rounded-t border-t border-amber-200 shadow-sm" />
           </div>
-          <div className="w-full h-full rounded-xl overflow-hidden">
-            <img 
-              src="/profile_placeholder.png" 
-              alt="Profile" 
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 photo-frame" 
+          <div className="relative w-full h-full rounded-xl overflow-hidden">
+            <Image
+              src="/Photo.png"
+              alt="Profile"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
           {/* Cursor-Following Light Spot */}
