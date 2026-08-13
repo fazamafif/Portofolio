@@ -149,7 +149,7 @@ export default function Contact() {
                   type="email"
                   name="email" // <-- Sudah ditambahkan
                   required
-                  placeholder="nama@email.com"
+                  placeholder="Abab789@email.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-2.5 bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-xl focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-600 transition-colors"
