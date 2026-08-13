@@ -18,11 +18,14 @@ export default function About() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         {/* Left Column - Narrative Bio (Liquid Glass) */}
         <div className="md:col-span-7 p-6 md:p-8 bg-white/40 dark:bg-slate-900/40 backdrop-blur-lg border border-white/50 dark:border-slate-800/50 shadow-lg rounded-3xl space-y-4">
-          <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
+          {/* <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
             Halo! Perkenalkan, nama saya <strong className="text-indigo-600 dark:text-indigo-400">Faza Maf&apos;Alul Afif</strong>. Saya adalah seorang siswa jurusan Rekayasa Perangkat Lunak (RPL) di SMK Pelita Nusantara.
+          </p> */}
+          <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
+            Saya adalah siswa RPL di SMK Pelita Nusantara yang sedang aktif membangun fondasi di bidang Web Development dan mendalami dasar-dasar Machine Learning
           </p>
           <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
-            Ketertarikan saya pada dunia pemrograman bermula dari rasa penasaran tentang bagaimana sistem di tampilan layar .
+            Bagi saya, menguasai konsep dasar dengan benar jauh lebih penting daripada terburu-buru. Saat ini saya berfokus memahami bagaimana web bekerja dari sisi logika dasar, sekaligus mempelajari bagaimana data diproses menggunakan Python dan pemodelan Machine Learning tingkat dasar.
           </p>
           {/* <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
             Sama seperti menyusun <strong className="text-amber-500">Lego</strong>, menulis baris kode bagi saya adalah seni merangkai komponen logika satu per satu hingga menjadi suatu sistem utuh yang kokoh, terstruktur, dan siap memecahkan masalah di dunia nyata.

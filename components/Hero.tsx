@@ -23,12 +23,12 @@ export default function Hero() {
           Faza Maf&apos;Alul Afif
         </h1>
 
-        <p className="text-base md:text-lg font-semibold text-indigo-600 dark:text-indigo-400 mb-4 tracking-wide uppercase">
+        {/* <p className="text-base md:text-lg font-semibold text-indigo-600 dark:text-indigo-400 mb-4 tracking-wide uppercase">
           Siswa & Web Developer Enthusiast
-        </p>
+        </p> */}
 
         <p className="text-lg max-w-xl leading-relaxed mb-8 text-slate-600 dark:text-slate-400 custom-fade-up delay-200">
-          Halo! Saya Faza, siswa SMK Pelita Nusantara yang baru belajar ngoding frontend dan bikin berbasis web.
+          Siswa Rekayasa Perangkat Lunak yang fokus merancang dan membangun aplikasi web fungsional, terstruktur, dan siap pakai.
         </p>
 
         <div className="flex flex-wrap gap-6 custom-fade-up delay-300 pt-3">
@@ -72,7 +72,7 @@ export default function Hero() {
           </div>
           <div className="relative w-full h-full rounded-xl overflow-hidden">
             <Image
-              src="/Photo.png"
+              src="/ProfilAbu.jpeg"
               alt="Profile"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
