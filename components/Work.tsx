@@ -35,9 +35,9 @@ export default function Work() {
 
 
   const tech = [
-    { name: 'Frontend', items: ['React', 'Next.js', 'Tailwind'] },
-    { name: 'Backend', items: ['Node.js', 'Express', 'MySQL'] },
-    { name: 'Tools', items: ['GitHub', 'Laragon', 'Docker'] },
+    { name: 'Frontend', items: ['React', 'TypeScript ', 'Tailwind'] },
+    { name: 'Backend', items: ['Node.js', 'Laravel ', 'MySQL'] },
+    { name: 'Tools', items: ['GitHub', 'Laragon'] },
   ];
 
   const skillColors = [
@@ -65,36 +65,33 @@ export default function Work() {
     <section id="work" className="space-y-8 scroll-mt-20">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
         <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
-          My Work 
+          My Work
         </h2>
 
         {/* Sub-Navbar (Lego styled) */}
         <div className="relative flex p-1 bg-slate-200/80 dark:bg-slate-900 border border-slate-300/40 dark:border-slate-800 rounded-xl w-fit h-10 select-none items-center">
           {/* Sliding active Lego brick indicator */}
-          <div 
-            className={`absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-lg transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-0 ${
-              subTab === "projects" 
-                ? "left-1 bg-indigo-600 border-indigo-700 shadow-[0_2px_0_#4338ca]" 
+          <div
+            className={`absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-lg transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-0 ${subTab === "projects"
+                ? "left-1 bg-indigo-600 border-indigo-700 shadow-[0_2px_0_#4338ca]"
                 : "left-[calc(50%+2px)] bg-green-600 border-green-700 shadow-[0_2px_0_#15803d]"
-            }`}
+              }`}
           >
             {/* Tiny stud on active sub-tab indicator */}
             <div className="w-2.5 h-1 bg-white/20 rounded-t absolute -top-1 left-1/2 -translate-x-1/2" />
           </div>
 
-          <button 
+          <button
             onClick={() => setSubTab("projects")}
-            className={`px-4 h-full text-xs font-bold rounded-lg transition-colors duration-200 z-10 ${
-              subTab === "projects" ? "text-white" : "text-slate-500 dark:text-slate-400"
-            }`}
+            className={`px-4 h-full text-xs font-bold rounded-lg transition-colors duration-200 z-10 ${subTab === "projects" ? "text-white" : "text-slate-500 dark:text-slate-400"
+              }`}
           >
             Proyek Pilihan
           </button>
-          <button 
+          <button
             onClick={() => setSubTab("skills")}
-            className={`px-4 h-full text-xs font-bold rounded-lg transition-colors duration-200 z-10 ${
-              subTab === "skills" ? "text-white" : "text-slate-500 dark:text-slate-400"
-            }`}
+            className={`px-4 h-full text-xs font-bold rounded-lg transition-colors duration-200 z-10 ${subTab === "skills" ? "text-white" : "text-slate-500 dark:text-slate-400"
+              }`}
           >
             Keahlian Tech
           </button>
@@ -152,12 +149,12 @@ export default function Work() {
                   <div className={`w-4 h-2 rounded-t border-t shadow-sm ${skillColors[i].studClass}`} />
                   <div className={`w-4 h-2 rounded-t border-t shadow-sm ${skillColors[i].studClass}`} />
                 </div>
-                
+
                 <h3 className={`text-xl mb-4 tracking-wider uppercase text-center ${skillColors[i].titleClass}`}>{cat.name}</h3>
                 <div className="flex flex-wrap gap-2 justify-center">
                   {cat.items.map((it, j) => (
-                    <span 
-                      key={j} 
+                    <span
+                      key={j}
                       className={`text-xs px-3 py-1.5 rounded-lg shadow-sm ${skillColors[i].itemClass}`}
                     >
                       {it}

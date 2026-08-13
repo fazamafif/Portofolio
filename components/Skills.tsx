@@ -3,9 +3,9 @@ import React from 'react';
 
 export default function Skills() {
   const tech = [
-    { name: 'Frontend', items: ['React', 'Next.js', 'Tailwind'] },
-    { name: 'Backend', items: ['Node.js', 'Express', 'MySQL'] },
-    { name: 'Tools', items: ['GitHub', 'Laragon', 'Docker'] },
+    { name: 'Frontend', items: ['React', 'TypeScript ', 'Tailwind'] },
+    { name: 'Backend', items: ['Node.js', 'Laravel ', 'MySQL'] },
+    { name: 'Tools', items: ['GitHub', 'Laragon'] },
   ];
 
   const colors = [
@@ -47,12 +47,12 @@ export default function Skills() {
               <div className={`w-4 h-2 rounded-t border-t shadow-sm ${colors[i].studClass}`} />
               <div className={`w-4 h-2 rounded-t border-t shadow-sm ${colors[i].studClass}`} />
             </div>
-            
+
             <h3 className={`text-xl mb-4 tracking-wider uppercase text-center ${colors[i].titleClass}`}>{cat.name}</h3>
             <div className="flex flex-wrap gap-2 justify-center">
               {cat.items.map((it, j) => (
-                <span 
-                  key={j} 
+                <span
+                  key={j}
                   className={`text-xs px-3 py-1.5 rounded-lg shadow-sm ${colors[i].itemClass}`}
                 >
                   {it}
