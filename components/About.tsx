@@ -3,7 +3,7 @@ import React from "react";
 
 export default function About() {
   const stats = [
-    { label: "Peran utama", value: "Junior Web Developer ", color: "text-blue-600 dark:text-blue-400" },
+    { label: "Peran utama", value: "Junior Front-End Developer", color: "text-blue-600 dark:text-blue-400" },
     { label: "Jurusan", value: "Rekayasa Perangkat Lunak (RPL)", color: "text-green-600 dark:text-green-400" },
     { label: "Sekolah", value: "SMK Pelita Nusantara ", color: "text-red-600 dark:text-red-400" },
     // { label: "Hobi Belum Tau", value: "Laravel", color: "text-amber-600 dark:text-amber-400" }
@@ -22,11 +22,11 @@ export default function About() {
             Halo! Perkenalkan, nama saya <strong className="text-indigo-600 dark:text-indigo-400">Faza Maf&apos;Alul Afif</strong>. Saya adalah seorang siswa jurusan Rekayasa Perangkat Lunak (RPL) di SMK Pelita Nusantara.
           </p> */}
           <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
-            Saya adalah siswa RPL di SMK Pelita Nusantara yang sedang aktif membangun fondasi di bidang Web Development dan mendalami dasar-dasar Machine Learning
+            Saya siswa Rekayasa Perangkat Lunak yang berfokus pada Front-End Web Development. Saat ini saya aktif mendalami pembuatan antarmuka web yang responsif, rapi, dan interaktif
           </p>
-          <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
+          {/* <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
             Bagi saya, menguasai konsep dasar dengan benar jauh lebih penting daripada terburu-buru. Saat ini saya berfokus memahami bagaimana web bekerja dari sisi logika dasar, sekaligus mempelajari bagaimana data diproses menggunakan Python dan pemodelan Machine Learning tingkat dasar.
-          </p>
+          </p> */}
           {/* <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">
             Sama seperti menyusun <strong className="text-amber-500">Lego</strong>, menulis baris kode bagi saya adalah seni merangkai komponen logika satu per satu hingga menjadi suatu sistem utuh yang kokoh, terstruktur, dan siap memecahkan masalah di dunia nyata.
           </p> */}

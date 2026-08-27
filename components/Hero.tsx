@@ -28,7 +28,7 @@ export default function Hero() {
         </p> */}
 
         <p className="text-lg max-w-xl leading-relaxed mb-8 text-slate-600 dark:text-slate-400 custom-fade-up delay-200">
-          Siswa Rekayasa Perangkat Lunak yang fokus merancang dan membangun aplikasi web fungsional, terstruktur, dan siap pakai.
+          Siswa RPL yang berfokus pada Front-End UI Development & Integrasi Back-End
         </p>
 
         <div className="flex flex-wrap gap-6 custom-fade-up delay-300 pt-3">
