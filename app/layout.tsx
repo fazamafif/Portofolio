@@ -9,7 +9,7 @@ import SplashScreen from "@/components/SplashScreen";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portofolio",
+  title: "Portofolio Website",
   description: "Portofolio Faza Maf'Alul Afif",
 };
 

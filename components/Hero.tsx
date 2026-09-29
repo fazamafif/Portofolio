@@ -72,7 +72,7 @@ export default function Hero() {
           </div>
           <div className="relative w-full h-full rounded-xl overflow-hidden">
             <Image
-              src="/ProfilAbu.jpeg"
+              src="/Foto.jpg"
               alt="Profile"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
