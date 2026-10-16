@@ -10,7 +10,7 @@ export default function Work() {
       title: "E-Voting Pemilihan Ketua OSIS",
       description: "Aplikasi voting digital yang saya buat untuk menyederhanakan pemilihan ketua OSIS di sekolah. Menghindari golput dan mempercepat perhitungan suara secara realtime.",
       tags: ["PHP", "Laravel", "MySQL", "Tailwind CSS"],
-      image: "/images/evoting-preview.webp",
+      image: "/evoting.jpg",
       repoLink: "https://github.com",
       demoLink: "#"
     },
@@ -18,7 +18,7 @@ export default function Work() {
       title: "Scraper Lowongan Kerja Otomatis",
       description: "Script Python sederhana untuk mengambil info loker terbaru dari internet dan menyusunnya langsung ke file Excel. Sangat membantu untuk mencari lowongan magang.",
       tags: ["Python", "BeautifulSoup", "Pandas"],
-      image: "/images/scraper-preview.webp",
+      image: "/scraper.jpg",
       repoLink: "https://github.com",
       demoLink: "#"
     },

@@ -9,7 +9,7 @@ import SplashScreen from "@/components/SplashScreen";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portofolio Website",
+  title: "Portofolio Faza Maf'Alul Afif",
   description: "Portofolio Faza Maf'Alul Afif",
 };
 
@@ -30,7 +30,7 @@ export default function RootLayout({
         <div className="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(99,102,241,0.1),rgba(255,255,255,0))] pointer-events-none"></div>
 
         <Navbar />
-        <main className="flex-grow pt-24 pb-12 px-6 md:px-12 max-w-5xl mx-auto w-full">
+        <main className="grow pt-24 pb-12 px-6 md:px-12 max-w-5xl mx-auto w-full">
           {children}
         </main>
         <Footer />
