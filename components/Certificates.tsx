@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useCallback, useEffect } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import { certificates } from "@/data/certificates";
 import type { Certificate } from "@/types/certificate";

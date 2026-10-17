@@ -1,19 +1,27 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 export default function SplashScreen() {
   const [loading, setLoading] = useState(0);
   const [visible, setVisible] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
 
+  const handleSkip = useCallback(() => {
+    setFadeOut(true);
+    setTimeout(() => {
+      setVisible(false);
+      document.body.style.overflow = "";
+    }, 500);
+  }, []);
+
   useEffect(() => {
     // Lock scroll when splash is visible
     document.body.style.overflow = "hidden";
 
     let currentProgress = 0;
-    // Fast loading simulation
+    // Fast loading simulation (increments quickly)
     const interval = setInterval(() => {
-      const increment = Math.floor(Math.random() * 15) + 5;
+      const increment = Math.floor(Math.random() * 15) + 8;
       currentProgress = Math.min(currentProgress + increment, 100);
       setLoading(currentProgress);
 
@@ -25,24 +33,28 @@ export default function SplashScreen() {
           setTimeout(() => {
             setVisible(false);
             document.body.style.overflow = "";
-          }, 600); // fade out duration
-        }, 600); // hold at 100%
+          }, 500);
+        }, 400);
       }
-    }, 150);
+    }, 100);
+
+    // Safety fallback: pastikan splash screen tidak pernah stuck lebih dari 2.5 detik
+    const fallbackTimer = setTimeout(() => {
+      handleSkip();
+    }, 2500);
+
+    const handleKeyDown = () => {
+      handleSkip();
+    };
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       clearInterval(interval);
+      clearTimeout(fallbackTimer);
+      window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
     };
-  }, []);
-
-  const handleSkip = () => {
-    setFadeOut(true);
-    setTimeout(() => {
-      setVisible(false);
-      document.body.style.overflow = "";
-    }, 600);
-  };
+  }, [handleSkip]);
 
   if (!visible) return null;
 
