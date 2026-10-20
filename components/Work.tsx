@@ -16,21 +16,20 @@ export default function Work() {
     },
     {
       title: "Digital Clinic",
-      description: "Apotek digital modern untuk pembelian obat bebas, vitamin, hingga tebus resep dokter secara praktis dengan layanan pengiriman cepat.",
+      description: "Layanan apotek digital modern untuk semua kebutuhan medis Anda.",
       tags: ["TypeScript", "React", "Tailwind CSS"],
       image: "/DigitalClinic.png",
       repoLink: "https://github.com/fazamafif/Digital-Clinic.git",
       demoLink: "#"
     },
-    // {
-    //   title: "Kantin Digital Sekolah",
-    //   description: "Aplikasi Kantin digital yang saya buat untuk memudahkan siswa memesan makanan tanpa antri. Fitur realtime order tracking dan pembayaran online membuatnya sangat praktis.",
-    //   tags: ["PHP", "Laravel", "MySQL", "Tailwind CSS"],
-    //   // Pastikan gambar ini ada di folder public/images
-    //   image: "/images/evoting-preview.webp",
-    //   repoLink: "https://github.com",
-    //   demoLink: "#"
-    // },
+    {
+      title: "Pustaka Koleksi Buku",
+      description: "Kelola katalog dan koleksi perpustakaan digital Anda dengan cepat, rapi, dan efisien.",
+      tags: ["PHP", "Laravel", "MySQL", "Tailwind CSS"],
+      image: "/KoleksiBuku.png",
+      repoLink: "https://github.com/fazamafif/Pustaka-Koleksi-Buku.git",
+      demoLink: "#"
+    },
     // {
     //   title: "Mini Apoteker",
     //   description: "Aplikasi Kantin digital yang saya buat untuk memudahkan untuk memilih obat. Fitur realtime order tracking dan pembayaran online membuatnya sangat praktis.",
