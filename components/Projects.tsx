@@ -1,32 +1,38 @@
 import Image from "next/image";
-import { title } from "process";
 
 export default function Projects() {
   const projects = [
     {
-      title: "E-Voting Pemilihan Ketua OSIS",
-      description: "Aplikasi voting digital yang saya buat untuk menyederhanakan pemilihan ketua OSIS di sekolah. Menghindari golput dan mempercepat perhitungan suara secara realtime.",
-      tags: ["PHP", "Laravel", "MySQL", "Tailwind CSS"],
-      image: "/evoting.jpg",
-      repoLink: "https://github.com",
+      title: "Renamer File ",
+      description: "Ubah nama banyak file sekaligus secara cepat, praktis, dan otomatis.",
+      tags: ["HTML", "JavaScript", "CSS"],
+      image: "/Renamer.png",
+      repoLink: "https://github.com/fazamafif/Renamer_File.git",
       demoLink: "#"
     },
     {
-      title: "Scraper Lowongan Kerja Otomatis",
-      description: "Script Python sederhana untuk mengambil info loker terbaru dari internet dan menyusunnya langsung ke file Excel. Sangat membantu untuk mencari lowongan magang.",
-      tags: ["Python", "BeautifulSoup", "Pandas"],
-      image: "/scraper.jpg",
-      repoLink: "https://github.com",
+      title: "Digital Clinic",
+      description: "Apotek digital modern untuk pembelian obat bebas, vitamin, hingga tebus resep dokter secara praktis dengan layanan pengiriman cepat.",
+      tags: ["TypeScript", "React", "Tailwind CSS"],
+      image: "/DigitalClinic.png",
+      repoLink: "https://github.com/fazamafif/Digital-Clinic.git",
       demoLink: "#"
     },
-    {
-      title: "Kantin Digital Sekolah",
-      description: "Aplikasi Kantin digital yang saya buat untuk memudahkan siswa memesan makanan tanpa antri. Fitur realtime order tracking dan pembayaran online membuatnya sangat praktis.",
-      tags: ["PHP", "Laravel", "MySQL", "Tailwind CSS"], // Pastikan gambar ini ada di folder public/images
-      image: "/images/evoting-preview.webp",
-      repoLink: "https://github.com",
-      demoLink: "#"
-    }
+    // {
+    //   title: "Kantin Digital Sekolah",
+    //   description: "Aplikasi Kantin digital yang saya buat untuk memudahkan siswa memesan makanan tanpa antri. Fitur realtime order tracking dan pembayaran online membuatnya sangat praktis.",
+    //   tags: ["PHP", "Laravel", "MySQL", "Tailwind CSS"], // Pastikan gambar ini ada di folder public/images
+    //   image: "/images/evoting-preview.webp",
+    //   repoLink: "https://github.com",
+    //   demoLink: "#"
+    // },
+    // {
+    //   title: "Mini Apoteker",
+    //   description: "Aplikasi Kantin digital yang saya buat untuk memudahkan untuk memilih obat. Fitur realtime order tracking dan pembayaran online membuatnya sangat praktis.",
+    //   tags: ["TypeScript",  "Tailwind CSS"], 
+    //   repoLink: "https://github.com",
+    //   demoLink: "#"
+    // }
   ];
 
   return (

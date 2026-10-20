@@ -56,7 +56,7 @@ export default function Certificates() {
   return (
     <section
       id="certificates"
-      className="scroll-mt-20 py-16 bg-gradient-to-b from-white/60 dark:from-slate-900/60 backdrop-blur-lg overflow-hidden"
+      className="scroll-mt-20 py-16 bg-linear-to-b from-white/60 dark:from-slate-900/60 backdrop-blur-lg overflow-hidden"
     >
       {/* ── Header: judul + counter + panah ─────────────────────────── */}
       <div className="flex items-center justify-between px-6 max-w-5xl mx-auto mb-6">
@@ -67,9 +67,6 @@ export default function Certificates() {
         <div className="flex items-center gap-3">
           {/* Badge counter */}
           <span className="inline-flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full px-3 py-1 text-sm font-bold text-slate-700 dark:text-slate-300 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-amber-500">
-              <path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-            </svg>
             <span>{currentIndex + 1}</span>
             <span className="text-slate-400">/</span>
             <span>{total}</span>
@@ -119,11 +116,11 @@ export default function Certificates() {
               setModalIndex(idx);
               scrollTo(idx);
             }}
-            className="group relative flex-none w-[260px] aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800/70 shadow-md hover:shadow-xl border border-slate-200 dark:border-slate-700/80 snap-start transition-all duration-300 hover:-translate-y-1 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+            className="group relative flex-none w-65 aspect-4/3 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800/70 shadow-md hover:shadow-xl border border-slate-200 dark:border-slate-700/80 snap-start transition-all duration-300 hover:-translate-y-1 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
             aria-label={`Lihat sertifikat ${idx + 1}`}
           >
             {/* Wrapper div menggunakan aspect-[4/3] responsif tanpa fixed height */}
-            <div className="relative w-full h-full aspect-[4/3] flex items-center justify-center p-2">
+            <div className="relative w-full h-full aspect-4/3 flex items-center justify-center p-2">
               <Image
                 src={cert.image}
                 alt={`Certificate ${idx + 1}`}
@@ -134,7 +131,7 @@ export default function Certificates() {
             </div>
 
             {/* Overlay "View" saat hover */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 bg-linear-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-5 h-5">
                   <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />

@@ -1,6 +1,38 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useSyncExternalStore } from "react";
 import Link from "next/link";
+
+const emptySubscribe = () => () => {};
+
+const themeListeners = new Set<() => void>();
+
+function subscribeTheme(callback: () => void) {
+  themeListeners.add(callback);
+  if (typeof window !== "undefined") {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const mediaListener = () => callback();
+    media.addEventListener("change", mediaListener);
+
+    return () => {
+      themeListeners.delete(callback);
+      media.removeEventListener("change", mediaListener);
+    };
+  }
+  return () => {
+    themeListeners.delete(callback);
+  };
+}
+
+function getThemeSnapshot(): "light" | "dark" {
+  if (typeof window === "undefined") return "light";
+  const saved = localStorage.getItem("theme");
+  if (saved === "dark" || saved === "light") return saved;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function getThemeServerSnapshot(): "light" | "dark" {
+  return "light";
+}
 
 // Custom SVG Icons with Lego Color Support
 const HomeIcon = ({ active }: { active: boolean }) => (
@@ -69,8 +101,8 @@ const navItems = [
 
 export default function Navbar() {
   const [activeTab, setActiveTab] = useState("hero");
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-  const [mounted, setMounted] = useState(false);
+  const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
+  const theme = useSyncExternalStore(subscribeTheme, getThemeSnapshot, getThemeServerSnapshot);
 
   const colors = [
     { bg: "bg-amber-400 border-amber-500 shadow-[0_3px_0_#b45309]", stud: "bg-amber-400 border-amber-300", text: "text-amber-950 font-black" },
@@ -81,17 +113,6 @@ export default function Navbar() {
   ];
 
   const activeIndex = navItems.findIndex((item) => item.id === activeTab);
-
-  // Read saved theme preference after mount (client-only)
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-    }
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     if (theme === "dark") {
@@ -126,9 +147,9 @@ export default function Navbar() {
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
+    const nextTheme = theme === "light" ? "dark" : "light";
+    localStorage.setItem("theme", nextTheme);
+    themeListeners.forEach((listener) => listener());
   };
 
   return (
@@ -213,20 +234,20 @@ export default function Navbar() {
       </div>
 
       {/* Vertical Divider line */}
-      <div className="w-px h-8 bg-slate-200 dark:bg-slate-700 flex-shrink-0 mx-0.5" />
+      <div className="w-px h-8 bg-slate-200 dark:bg-slate-700 -shrink-0 mx-0.5" />
 
       {/* Theme Toggle Button — fixed width so it never gets squeezed */}
       <button
         onClick={toggleTheme}
-        className="flex-shrink-0 h-full flex flex-col justify-center items-center cursor-pointer z-10 relative pb-1 hover:scale-105 active:scale-95 transition-all duration-200 group"
+        className="-shrink-0 h-full flex flex-col justify-center items-center cursor-pointer z-10 relative pb-1 hover:scale-105 active:scale-95 transition-all duration-200 group"
         style={{ width: "52px" }}
         aria-label="Toggle dark mode"
       >
         <span className="text-lg transition-transform duration-200 group-hover:rotate-12 leading-none">
-          {mounted ? (theme === "light" ? "☀️" : "🌙") : "☀️"}
+          {isMounted ? (theme === "light" ? "☀️" : "🌙") : "☀️"}
         </span>
         <span className="text-[9px] font-bold tracking-wide text-slate-500 dark:text-slate-400 mt-0.5 leading-none">
-          {mounted ? (theme === "light" ? "Light" : "Dark") : "Light"}
+          {isMounted ? (theme === "light" ? "Light" : "Dark") : "Light"}
         </span>
       </button>
     </header>

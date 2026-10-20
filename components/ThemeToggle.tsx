@@ -1,31 +1,44 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useSyncExternalStore } from "react";
+
+const themeListeners = new Set<() => void>();
+
+function subscribeTheme(callback: () => void) {
+  themeListeners.add(callback);
+  if (typeof window !== "undefined") {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const mediaListener = () => callback();
+    media.addEventListener("change", mediaListener);
+
+    return () => {
+      themeListeners.delete(callback);
+      media.removeEventListener("change", mediaListener);
+    };
+  }
+  return () => {
+    themeListeners.delete(callback);
+  };
+}
+
+function getThemeSnapshot(): "light" | "dark" {
+  if (typeof window === "undefined") return "light";
+  const saved = localStorage.getItem("theme");
+  if (saved === "dark" || saved === "light") return saved;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as "light" | "dark";
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
-    
-    setTheme(initialTheme);
-    if (initialTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
+  const theme = useSyncExternalStore(subscribeTheme, getThemeSnapshot, () => "light");
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     if (newTheme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
+    themeListeners.forEach((listener) => listener());
   };
 
   return (

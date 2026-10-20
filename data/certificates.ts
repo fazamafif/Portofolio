@@ -48,7 +48,7 @@ export const certificates: Certificate[] = [
   },
   {
     id: 'cert-10',
-    image: '/evoting.jpg',
+    image: '/Sertifikat10.png',
     credentialUrl: '#',
   },
 ];

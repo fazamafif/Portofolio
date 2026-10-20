@@ -52,7 +52,7 @@ export default function CertificateModal({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[99999] bg-black/90 backdrop-blur-md flex flex-col justify-between p-3 sm:p-6 select-none animate-in fade-in duration-200"
+      className="fixed inset-0 z-99999 bg-black/90 backdrop-blur-md flex flex-col justify-between p-3 sm:p-6 select-none animate-in fade-in duration-200"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
