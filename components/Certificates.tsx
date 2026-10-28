@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useCallback } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { certificates } from "@/data/certificates";
 import type { Certificate } from "@/types/certificate";
 
@@ -9,7 +10,10 @@ const CARD_WIDTH = 260;
 const CARD_GAP = 16;
 const STEP = CARD_WIDTH + CARD_GAP;
 
-import CertificateModal from "./CertificateModal";
+// Lazy load modal sertifikat sehingga tidak membengkakkan main bundle saat initial load
+const CertificateModal = dynamic(() => import("./CertificateModal"), {
+  ssr: false,
+});
 
 /* ─── Komponen utama ────────────────────────────────────────────────────────── */
 export default function Certificates() {
@@ -151,23 +155,28 @@ export default function Certificates() {
         ))}
       </div>
 
-      {/* ── Dot indicators ─────────────────────────────────────────── */}
-      <div className="flex justify-center gap-1.5 mt-4">
+      {/* ── Dot indicators (accessible tap targets minimum 28x28px) ── */}
+      <div className="flex justify-center items-center gap-1 mt-4">
         {certificates.map((_, idx) => (
           <button
             key={idx}
+            type="button"
             onClick={() => scrollTo(idx)}
             aria-label={`Pergi ke sertifikat ${idx + 1}`}
-            className="transition-all duration-300 rounded-full"
-            style={{
-              width: idx === currentIndex ? "20px" : "8px",
-              height: "8px",
-              background:
-                idx === currentIndex
-                  ? "rgb(251 191 36)"   /* amber-400 */
-                  : "rgb(203 213 225)", /* slate-300 */
-            }}
-          />
+            className="flex items-center justify-center p-2 min-w-[32px] min-h-[32px] cursor-pointer"
+          >
+            <span
+              className="block rounded-full transition-all duration-300"
+              style={{
+                width: idx === currentIndex ? "20px" : "8px",
+                height: "8px",
+                backgroundColor:
+                  idx === currentIndex
+                    ? "rgb(251 191 36)"   /* amber-400 */
+                    : "rgb(203 213 225)", /* slate-300 */
+              }}
+            />
+          </button>
         ))}
       </div>
 

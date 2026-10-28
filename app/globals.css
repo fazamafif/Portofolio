@@ -43,7 +43,6 @@ body {
   background-size: 36px 36px;
   background-position: center center;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -131,6 +130,15 @@ body {
 
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes splashProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
   }
 }
 

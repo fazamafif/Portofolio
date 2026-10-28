@@ -185,8 +185,8 @@ export default function Navbar() {
         ))}
       </div>
 
-      {/* Navigation Items — flex row, each item takes equal space */}
-      <div className="relative flex-1 h-full flex min-w-0">
+      {/* Navigation Items — flex row with semantic nav tag */}
+      <nav aria-label="Navigasi Utama" className="relative flex-1 h-full flex min-w-0">
         {/* Sliding 3D Lego Brick Indicator */}
         {activeIndex !== -1 && (
           <div
@@ -214,6 +214,8 @@ export default function Navbar() {
               href={`#${item.id}`}
               onClick={() => setActiveTab(item.id)}
               className="flex-1 h-full flex flex-col justify-center items-center z-10 relative pb-1 min-w-0"
+              aria-label={item.label}
+              aria-current={isActive ? "page" : undefined}
             >
               {/* Icon */}
               <div className="transition-transform duration-200 hover:scale-110 flex items-center justify-center">
@@ -222,8 +224,8 @@ export default function Navbar() {
 
               {/* Item Label */}
               <span
-                className={`text-[9px] font-bold tracking-wide transition-colors duration-200 mt-0.5 leading-none whitespace-nowrap ${
-                  isActive ? colors[idx].text : "text-slate-500 dark:text-slate-400"
+                className={`text-[10px] font-bold tracking-wide transition-colors duration-200 mt-0.5 leading-none whitespace-nowrap ${
+                  isActive ? colors[idx].text : "text-slate-600 dark:text-slate-300"
                 }`}
               >
                 {item.label}
@@ -231,22 +233,23 @@ export default function Navbar() {
             </Link>
           );
         })}
-      </div>
+      </nav>
 
       {/* Vertical Divider line */}
       <div className="w-px h-8 bg-slate-200 dark:bg-slate-700 -shrink-0 mx-0.5" />
 
       {/* Theme Toggle Button — fixed width so it never gets squeezed */}
       <button
+        type="button"
         onClick={toggleTheme}
         className="-shrink-0 h-full flex flex-col justify-center items-center cursor-pointer z-10 relative pb-1 hover:scale-105 active:scale-95 transition-all duration-200 group"
         style={{ width: "52px" }}
-        aria-label="Toggle dark mode"
+        aria-label="Toggle tema gelap atau terang"
       >
         <span className="text-lg transition-transform duration-200 group-hover:rotate-12 leading-none">
           {isMounted ? (theme === "light" ? "☀️" : "🌙") : "☀️"}
         </span>
-        <span className="text-[9px] font-bold tracking-wide text-slate-500 dark:text-slate-400 mt-0.5 leading-none">
+        <span className="text-[10px] font-bold tracking-wide text-slate-600 dark:text-slate-300 mt-0.5 leading-none">
           {isMounted ? (theme === "light" ? "Light" : "Dark") : "Light"}
         </span>
       </button>

@@ -3,10 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import LegoBricks from "@/components/LegoBricks";
-import SplashScreen from "@/components/SplashScreen";
+import VisualEffects from "@/components/VisualEffects";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Portofolio Faza Maf'Alul Afif",
@@ -21,11 +20,9 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${inter.className} text-slate-600 dark:text-slate-300 antialiase relative min-h-screen flex flex-col`} suppressHydrationWarning>
-        {/* Splash Screen Lego */}
-        <SplashScreen />
+        {/* Visual Effects (Splash Screen & Background Lego) — lazy-loaded client side */}
+        <VisualEffects />
 
-        {/* Mainan Lego Berwarna-warni di Background */}
-        <LegoBricks />
         {/* Efek Aurora Glow Statis */}
         <div className="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(99,102,241,0.1),rgba(255,255,255,0))] pointer-events-none"></div>
 
