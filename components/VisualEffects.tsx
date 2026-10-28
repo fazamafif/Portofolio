@@ -27,14 +27,15 @@ export default function VisualEffects() {
         }
       };
     } else {
-      const timer = setTimeout(() => setIsIdle(true), 150);
+      const timer = setTimeout(() => setIsIdle(true), 200);
       return () => clearTimeout(timer);
     }
   }, []);
 
   return (
     <>
-      <SplashScreen />
+      {/* SplashScreen dinonaktifkan dari initial blocking agar FCP dan LCP bisa instan tembus skor 95+ */}
+      {/* <SplashScreen /> */}
       {isIdle && <LegoBricks />}
     </>
   );

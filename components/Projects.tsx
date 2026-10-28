@@ -6,7 +6,7 @@ export default function Projects() {
       title: "Renamer File ",
       description: "Ubah nama banyak file sekaligus secara cepat, praktis, dan otomatis.",
       tags: ["HTML", "JavaScript", "CSS"],
-      image: "/Renamer.png",
+      image: "/Renamer.webp",
       repoLink: "https://github.com/fazamafif/Renamer_File.git",
       demoLink: "#"
     },
@@ -14,7 +14,7 @@ export default function Projects() {
       title: "Digital Clinic",
       description: "Layanan apotek digital modern untuk semua kebutuhan medis Anda.",
       tags: ["TypeScript", "React", "Tailwind CSS"],
-      image: "/DigitalClinic.png",
+      image: "/DigitalClinic.webp",
       repoLink: "https://github.com/fazamafif/Digital-Clinic.git",
       demoLink: "#"
     },
@@ -22,7 +22,7 @@ export default function Projects() {
       title: "Pustaka Koleksi Buku",
       description: "Kelola katalog dan koleksi perpustakaan digital Anda dengan cepat, rapi, dan efisien.",
       tags: ["PHP", "Laravel", "MySQL", "Tailwind CSS"],
-      image: "/KoleksiBuku.png",
+      image: "/KoleksiBuku.webp",
       repoLink: "https://github.com/fazamafif/Pustaka-Koleksi-Buku.git",
       demoLink: "#"
     },

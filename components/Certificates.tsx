@@ -163,7 +163,7 @@ export default function Certificates() {
             type="button"
             onClick={() => scrollTo(idx)}
             aria-label={`Pergi ke sertifikat ${idx + 1}`}
-            className="flex items-center justify-center p-2 min-w-[32px] min-h-[32px] cursor-pointer"
+            className="flex items-center justify-center p-2 min-w-8 min-h-8 cursor-pointer"
           >
             <span
               className="block rounded-full transition-all duration-300"
