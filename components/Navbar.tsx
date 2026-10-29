@@ -154,27 +154,8 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 select-none"
-      style={{
-        width: "min(420px, 95vw)",
-        height: "64px",
-        background: "var(--navbar-bg, rgba(241,245,249,1))",
-        border: "1px solid rgba(226,232,240,1)",
-        borderRadius: "1rem",
-        boxShadow: "0 4px 24px rgba(0,0,0,0.10)",
-        display: "flex",
-        alignItems: "center",
-        padding: "0 4px",
-      }}
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 select-none bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl flex items-center px-1 w-[min(420px,95vw)] h-16"
     >
-      {/* Dark mode CSS variable override */}
-      <style>{`
-        .dark header {
-          --navbar-bg: rgba(15,23,42,1);
-          border-color: rgba(30,41,59,1);
-        }
-      `}</style>
-
       {/* Grey Lego Studs on top of the navbar baseplate */}
       <div className="flex gap-2 justify-center absolute top-[1.5px] left-0 right-0 px-4 pointer-events-none">
         {Array.from({ length: 12 }).map((_, i) => (

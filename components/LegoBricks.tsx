@@ -98,7 +98,7 @@ const LegoBrick3D = ({
 
 export default function LegoBricks() {
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div className="hidden md:block fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Red Brick Top Left */}
       <LegoBrick3D color="red" size="2x4" className="top-[12%] left-[4%]" floatClass="lego-float-1" />
       

@@ -227,12 +227,27 @@ body {
 
 .lego-float-1 {
   animation: legoFloat1 6s ease-in-out infinite;
+  will-change: transform;
 }
 .lego-float-2 {
   animation: legoFloat2 8s ease-in-out infinite;
+  will-change: transform;
 }
 .lego-float-3 {
   animation: legoFloat3 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lego-float-1,
+  .lego-float-2,
+  .lego-float-3,
+  .photo-frame,
+  .custom-fade-up,
+  .drop-brick,
+  .fade-in-down {
+    animation: none !important;
+  }
 }
 
 /* Liquid Glass Navbar Styling */
